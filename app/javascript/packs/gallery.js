@@ -8,13 +8,16 @@ window.addEventListener("load", () => {
 });
 
 apiRequest.onreadystatechange = () => {
-  var response = JSON.parse(apiRequest.response);
-  var photos = response.photos.photo;
-  console.log(photos);
-  
-  for (let i of photos) {
-    var pictures = "https://farm" + i.farm +".staticflickr.com/" + i.server + "/" + i.id + "_" + i.secret + ".jpg";
-    tester.innerHTML += "<img src='" + pictures + "' ><br>"; 
-  }  
-  
-}
+  if(apiRequest.status === 200) {  
+    var response = JSON.parse(apiRequest.response);
+    var photos = response.photos.photo;
+    console.log(photos);
+    
+    for (let i of photos) {
+      var pictures = "https://farm" + i.farm +".staticflickr.com/" + i.server + "/" + i.id + "_" + i.secret + ".jpg";
+      tester.innerHTML += "<img src='" + pictures + "' ><br>"; 
+    }  
+  }else {
+    console.log("not ready");
+  }
+};
