@@ -2,3 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+$background-color: #F4F4F4;
+
+#photosContainer {
+  background-color: $background-color;
+  width: 90%;
+  text-align: center;
+  img {
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 16px #333;
+    transition: all 1.5s ease;
+  }
+}

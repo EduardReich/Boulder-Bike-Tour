@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BoulderBikeTour</title>
+    <title>Boulder Bike Tour</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
-    
+    <div id="pageContainer">
+      <nav>
+        <ul>
+          <li class="grow"><a href="/">Home</a></li>
+          <li><a class="grow" href="/riders">Competitors</a></li>
+          <li><a class="grow" href="/map/index">Locations</a></li>
+          <li><a class="grow" href="/photo/index">Gallery</a></li>
+          <li><a class="grow" href="/">About</a></li>
+        </ul>
+      </nav>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>

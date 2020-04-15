@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  resources :submissions
+  devise_for :users
   get 'map/index'
   get 'photo/index'
-
+  get 'time/index'
   get 'home/index'
+  get '/riders/locations' => 'riders#locations'
 
   resources :riders
   

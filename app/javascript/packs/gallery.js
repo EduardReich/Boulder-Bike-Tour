@@ -1,5 +1,4 @@
 const apiKey = "d9f919603b3f6e079ee3a340db3dbb15";
-const loadMoreBtn = document.getElementById("loadMoreBtn");
 const photosContainer = document.getElementById("photosContainer");
 
 const state = {
@@ -14,15 +13,18 @@ function getPhotos(page) {
       const endResult = [];
       for(const i of result) {
         let pictures = "https://farm" + i.farm +".staticflickr.com/" + i.server + "/" + i.id + "_" + i.secret + ".jpg";
-        endResult.push("<img src='" + pictures + "' >");
-      }     
-      photosContainer.innerHTML += endResult;
+        endResult.push("<img src=" + pictures + " >");
+      }          
+      photosContainer.innerHTML += endResult.join("");
     });
 }    
 
 getPhotos(state.page);
 
-loadMoreBtn.addEventListener("click", function() {
-  state.page++;
-  getPhotos(state.page);
-});
+
+window.onscroll = function(ev) {
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    state.page++;
+    getPhotos(state.page);
+  }
+};

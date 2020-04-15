@@ -4,6 +4,11 @@ class RidersController < ApplicationController
     @riders = Rider.all
   end
 
+  def locations
+    @riders = Rider.all
+    render json: @riders, only: [:id, :latitude, :longitude] 
+  end
+
   def show
     @rider = Rider.find(params[:id])
   end
@@ -41,7 +46,7 @@ class RidersController < ApplicationController
     @rider.destroy
 
     redirect_to riders_path
-  end  
+  end
 
   private
     def rider_params
