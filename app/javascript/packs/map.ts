@@ -2,7 +2,7 @@ import {Loader, LoaderOptions} from 'google-maps';
 // or const {Loader} = require('google-maps'); without typescript
 
 const options: LoaderOptions = {/* todo */};
-const loader = new Loader('AIzaSyDyTSBeiR8Vb1UgRpGawDKcnn4EbJPji7U', options);
+const loader = new Loader('api', options);
 
 
 loader.load().then(function (google) {
