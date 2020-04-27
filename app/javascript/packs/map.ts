@@ -3,7 +3,7 @@ import {Loader, LoaderOptions} from 'google-maps';
 
 
 const options: LoaderOptions = {/* todo */};
-const loader = new Loader('AIzaSyDyTSBeiR8Vb1UgRpGawDKcnn4EbJPji7U', options);
+const loader = new Loader('api', options);
 
 
 function initGmaps() {
@@ -36,3 +36,15 @@ if (locations.latitude !== undefined && window.google == undefined) {
 
 
 
+<<<<<<< HEAD
+=======
+      // Create markers.
+      for (var i = 0; i < features.length; i++) {
+        var marker = new google.maps.Marker({
+          position: features[i].position,
+          icon: icons[features[i].type].icon,
+          map: map
+        });
+      };
+});
+>>>>>>> 228c80310fa799c1b2178e09ed92523cd8726c50
