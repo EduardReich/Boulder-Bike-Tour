@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_with(model: submission, local: true) do |form| %>
   <% if submission.errors.any? %>
     <div id="error_explanation">
@@ -11,27 +12,28 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+    <%= form.text_field :first_name, :class => "form-control", :placeholder => "Thomas" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <%= form.text_field :last_name, :class => "form-control", :placeholder => "Anderson" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :email %>
-    <%= form.text_area :email %>
+    <%= form.text_area :email, :class => "form-control", :type => "email", :placeholder => "name@example.com" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :slogan %>
-    <%= form.text_area :slogan %>
+    <%= form.text_area :slogan, :class => "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<div class="actions">
+  <%= form.submit :class => "btn btn-dark" %>
+</div>
 <% end %>
+</div>

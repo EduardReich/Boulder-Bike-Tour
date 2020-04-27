@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&family=Ubuntu&display=swap');
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#map {
+  width: 80%;
+  height: 80vh;
+  margin-top: 70px;
+  align-self: center;
+}
+
+#photosContainer {
+  background-color: #f4f4f4;
+  width: 98%;
+  text-align: center;
+}
+#photosContainer img {
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 16px #333;
+  transition: all 1.5s ease;
+}
+
+#homePageContainer{
+  height: 100vh;
+  background-image: url('/assets/boulder2.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+} 
+
+#mapContainer {
+  background-image: url('/assets/mapBkg.png');
+}
+
+#generalContainer {
+  background-image: url('/assets/mapBkg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.navbar {
+  font-size: 1.3rem;
+}

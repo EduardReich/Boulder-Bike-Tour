@@ -4,69 +4,6 @@
 
 $base-color: #092835;
 
-html {
-  box-sizing: border-box;
-}
-
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-body {
-  margin: 0;
-} 
-
-#pageContentContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 70px;
-}
-
-nav {
-  background-color: #092835;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 70px;
-}
-
-nav ul {
-  text-align: center;
-  list-style-type: none;
-  margin: 0;
-  padding: 15px; 
-}
-
-nav ul li {
-  display: inline;
-  font-size: 27px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 15px;  
-  letter-spacing: 0;
-}
-
-nav ul li a:hover {
-  background-color: #0d3d52;
-}
-
-#counter{
-  background-color: $base-color;
-  color: white;
-  width: 200px;
-  
-  p {
-    border: 2px solid white;
-    margin: 0;
-    padding: 15px;
-  }
-}
-
 #homePageContainer{
   height: 100vh;
   background-image: url('/assets/boulder2.jpeg');

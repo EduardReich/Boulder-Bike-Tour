@@ -1,9 +1,8 @@
-state = {
-  locations: [
-    {latitude: []},
-    {longitude: []}
-  ]
+locations = {
+  latitude: [],
+  longitude: []
 }
+
 
 function getData() {
 
@@ -17,8 +16,8 @@ function getData() {
       ridersLatitude.push(result[i].latitude);
       riderLongitude.push(result[i].longitude);
     }
-    state.locations[0] = ridersLatitude;
-    state.locations[1] = riderLongitude;
+    locations.latitude = ridersLatitude;
+    locations.longitude = riderLongitude;
 
   });
 }

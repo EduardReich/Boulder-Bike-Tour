@@ -1,33 +1,45 @@
-<p id="notice"><%= notice %></p>
+<div id="generalContainer" class="d-flex flex-column">
+  <p id="notice"><%= notice %></p>
 
-<h1>Submissions</h1>
+  <h1 class="mx-auto mt-5">Submissions</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <th>Slogan</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @submissions.each do |submission| %>
+  <table class="table w-50 mx-auto mt-5">
+    <thead>
       <tr>
-        <td><%= submission.first_name %></td>
-        <td><%= submission.last_name %></td>
-        <td><%= submission.email %></td>
-        <td><%= submission.slogan %></td>
-        <td><%= link_to 'Show', submission %></td>
-        <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
-        <td><%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>First name</th>
+        <% if user_signed_in? %>
+        <th>Last name</th>
+        <th>Email</th>
+        <% end %>
+        <th>Slogan</th>
+        <th>Date</th>
+        <% if user_signed_in? %>
+        <th colspan="3"></th>
+        <% end%>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @submissions.each do |submission| %>
+        <tr>
+          <td><%= submission.first_name %></td>
+          <% if user_signed_in? %>
+          <td><%= submission.last_name %></td>
+          <td><%= submission.email %></td>
+          <% end %>
+          <td><%= submission.slogan %></td>
+          <td><%= submission.created_at %></td>
+          <% if user_signed_in? %>
+          <td><%= link_to 'Show', submission %></td>
+          <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
+          <td><%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Submission', new_submission_path %>
+  <br>
+
+  <%= link_to 'New Submission', new_submission_path, :class => "btn btn-dark w-10 mx-auto"%>
+</div>

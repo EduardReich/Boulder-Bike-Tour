@@ -1,32 +1,33 @@
-<h1>Riders</h1>
+<div id="generalContainer" class="d-flex flex-column">
 
+  <div class="mx-auto mt-5">
+    <p>
+      <strong>Rider:</strong>
+    </p>
 
-<div>
-  <p>
-    <strong>Riders:</strong>
-  </p>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <strong>First Name:</strong>
+        <%= @rider.first_name %>
+      </li>
+      <li class="list-group-item">
+        <strong>Last Name:</strong>
+        <%= @rider.last_name %>
+      </li>
+      <li class="list-group-item">
+        <strong>City:</strong>
+        <%= @rider.city %>
+      </li>
+      <li class="list-group-item">
+        <strong>Latitude:</strong>
+        <%= @rider.latitude %>
+      </li>
+      <li class="list-group-item">
+        <strong>Longitude:</strong>
+        <%= @rider.longitude %>
+      </li>
+    <ul>
 
-
-  <p>
-    <strong>First Name:</strong>
-    <%= @rider.first_name %>
-  </p>
-  <p>
-    <strong>Last Name:</strong>
-    <%= @rider.last_name %>
-  </p>
-  <p>
-    <strong>City:</strong>
-    <%= @rider.city %>
-  </p>
-  <p>
-    <strong>Latitude:</strong>
-    <%= @rider.latitude %>
-  </p>
-  <p>
-    <strong>Longitude:</strong>
-    <%= @rider.longitude %>
-  </p>
-
-  <%= link_to 'Back', riders_path %>
-</div> 
+    <%= link_to 'Back', riders_path, :class => "btn btn-dark mt-5" %>
+  </div> 
+</div>
