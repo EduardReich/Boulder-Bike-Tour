@@ -32,19 +32,3 @@ if (locations.latitude !== undefined && window.google == undefined) {
 } else {
   location.reload(true);
 }
-
-
-
-
-<<<<<<< HEAD
-=======
-      // Create markers.
-      for (var i = 0; i < features.length; i++) {
-        var marker = new google.maps.Marker({
-          position: features[i].position,
-          icon: icons[features[i].type].icon,
-          map: map
-        });
-      };
-});
->>>>>>> 228c80310fa799c1b2178e09ed92523cd8726c50
