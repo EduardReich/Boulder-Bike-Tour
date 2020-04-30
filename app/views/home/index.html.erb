@@ -1,8 +1,12 @@
-<div id="homePageContainer">
+<div class="d-flex vh-100" id="homePageContainer">
+  <div class="w-50 d-flex flex-row mx-auto">
+    <div class="justify-content-center" id="counter"></div>
+  </div>
 
-  <div id="counter"></div>
-
-  <%= link_to 'New rider', submissions_path %>
-
+  <div class="w-50 d-flex flex-row">
+    <%= link_to 'Help us find a great slogan!', submissions_path, :class => "w-100 h-25 text-center p-5", :id => "announce" %>
+  </div>
   <%= javascript_pack_tag 'countdown' %>
+</div>
+<div id="sloganSection" class="d-flex vh-100">
 </div>

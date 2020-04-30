@@ -3,13 +3,17 @@ import {Loader, LoaderOptions} from 'google-maps';
 
 
 const options: LoaderOptions = {/* todo */};
-const loader = new Loader('api', options);
+const loader = new Loader('AIzaSyDyTSBeiR8Vb1UgRpGawDKcnn4EbJPji7U', options);
 
 
 function initGmaps() {
   const map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 40.012394, lng: -105.260928},
     zoom: 13,
+  });
+
+  var infowindow =  new google.maps.InfoWindow({
+    content: ""
   });
 
   var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/cycling.png';
@@ -22,7 +26,23 @@ function initGmaps() {
       icon: iconBase,
       map: map
     });
+    var contentString = 
+    '<div id="content">'+
+    '<div id="siteNotice">'+
+    '</div>'+
+    '<h2 id="firstHeading" class="firstHeading">'+names.first[i] + ' ' + names.last[i]'</h2>'+
+    '</div>';
+
+    bindInfoWindow(marker, map, infowindow, contentString);
   };
+ 
+}
+
+function bindInfoWindow(marker, map, infowindow, description) {
+  marker.addListener('click', function() {
+      infowindow.setContent(description);
+      infowindow.open(map, this);
+  });
 }
 
 if (locations.latitude !== undefined && window.google == undefined) {
@@ -36,15 +56,3 @@ if (locations.latitude !== undefined && window.google == undefined) {
 
 
 
-<<<<<<< HEAD
-=======
-      // Create markers.
-      for (var i = 0; i < features.length; i++) {
-        var marker = new google.maps.Marker({
-          position: features[i].position,
-          icon: icons[features[i].type].icon,
-          map: map
-        });
-      };
-});
->>>>>>> 228c80310fa799c1b2178e09ed92523cd8726c50

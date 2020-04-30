@@ -6,7 +6,7 @@ class RidersController < ApplicationController
 
   def locations
     @riders = Rider.all
-    render json: @riders, only: [:id, :latitude, :longitude] 
+    render json: @riders, only: [:id, :first_name, :last_name, :latitude, :longitude] 
   end
 
   def show
@@ -14,11 +14,19 @@ class RidersController < ApplicationController
   end
 
   def new
-    @rider = Rider.new
+    if user_signed_in?
+      @rider = Rider.new
+    else
+      redirect_to riders_path
+    end
   end
 
   def edit
-    @rider = Rider.find(params[:id])
+    if user_signed_in?
+      @rider = Rider.find(params[:id])
+    else
+      redirect_to riders_path
+    end
   end
     
   def create

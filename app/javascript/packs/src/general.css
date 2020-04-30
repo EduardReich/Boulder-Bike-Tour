@@ -24,7 +24,6 @@ body {
 }
 
 #homePageContainer{
-  height: 100vh;
   background-image: url('/assets/boulder2.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -45,4 +44,15 @@ body {
 
 .navbar {
   font-size: 1.3rem;
+}
+
+#announce {
+  font-size: 1.8rem;
+}
+
+#sloganSection {
+  background-image: url('/assets/mapBkg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }

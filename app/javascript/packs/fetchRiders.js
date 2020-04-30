@@ -3,6 +3,11 @@ locations = {
   longitude: []
 }
 
+names = {
+  first: [],
+  last: []
+}
+
 
 function getData() {
 
@@ -11,14 +16,19 @@ function getData() {
   .then((data) => {
     const result = data;
     ridersLatitude = [];
-    riderLongitude = [];
+    ridersLongitude = [];
+    ridersFirst = [];
+    ridersLast = [];
     for(let i = 0; i < result.length; i++) {
       ridersLatitude.push(result[i].latitude);
-      riderLongitude.push(result[i].longitude);
+      ridersLongitude.push(result[i].longitude);
+      ridersFirst.push(result[i].first_name);
+      ridersLast.push(result[i].last_name);
     }
     locations.latitude = ridersLatitude;
-    locations.longitude = riderLongitude;
-
+    locations.longitude = ridersLongitude;
+    names.first = ridersFirst;
+    names.last = ridersLast;
   });
 }
 
