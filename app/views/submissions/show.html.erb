@@ -1,24 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div id="generalContainer" class="d-flex flex-column"> 
+  <div class="container text-center">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @submission.first_name %>
-</p>
+    <p>
+      <strong>First name:</strong>
+      <%= @submission.first_name %>
+    </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @submission.last_name %>
-</p>
+    <p>
+      <strong>Last name:</strong>
+      <%= @submission.last_name %>
+    </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @submission.email %>
-</p>
+    <p>
+      <strong>Email:</strong>
+      <%= @submission.email %>
+    </p>
 
-<p>
-  <strong>Slogan:</strong>
-  <%= @submission.slogan %>
-</p>
+    <p>
+      <strong>Slogan:</strong>
+      <%= @submission.slogan %>
+    </p>
 
-<%= link_to 'Edit', edit_submission_path(@submission) %> |
-<%= link_to 'Back', submissions_path %>
+    <%= link_to 'Edit', edit_submission_path(@submission) %> 
+    <%= link_to 'Back', submissions_path %>
+  </div>  
+</div>

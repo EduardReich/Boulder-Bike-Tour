@@ -7,8 +7,7 @@ state = {
 fetch('/time/index')
   .then(response => response.json())
   .then((data) => {
-    state.now = Math.floor(data);
-    console.log(state.now);        
+    state.now = Math.floor(data);     
   })
 
 var counter = document.getElementById('counter');
@@ -31,8 +30,11 @@ function startTimer(display) {
     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    display.innerHTML = "<div class='text-center'><ul class='list-group-flush'><li class='list-group-item bg-transparent'>" + days + " Days </li><li class='list-group-item bg-transparent'>" + hours + " Hours </li><li class='list-group-item bg-transparent'>"
-      + minutes + " Minutes </li><li class='list-group-item bg-transparent'>" + seconds + " Seconds remaining</li><li class='list-group-item bg-transparent'> 2021/01/04</li></ul></div>";
+    display.innerHTML = "<div class='text-center m-5'><ul class='list-group'><li class='list-group-item text-white bg-hunter-green'><b>"
+      + days + "</b> Days </li><li class='list-group-item bg-morning-blue'><b>"
+      + hours + "</b> Hours </li><li class='list-group-item text-white bg-hunter-green'><b>"
+      + minutes + "</b> Minutes </li><li class='list-group-item bg-morning-blue'><b>" 
+      + seconds + "</b> Seconds</li></ul></div>";
 
     if (distance < 0) {
       clearInterval(x);

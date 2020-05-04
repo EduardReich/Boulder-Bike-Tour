@@ -1,14 +1,13 @@
 <div class="d-flex vh-100 flex-row-reverse" id="homePageContainer">
   <div class="container">        
     <div class="row">
-      <div class="col-sm" id="counter"></div>  
+      <div class="col-md" id="counter"></div>  
 
-      <div class="m-5 col-sm text-center"> 
-        <h1>Boulder Bike Tour 2021</h1> 
-        <p class="mt-5">Etiam ex ex, condimentum at libero ac, ultrices 
+      <div class="m-5 col-md text-center"> 
+        <h1 class="text-morning-blue">Boulder Bike Tour 2021</h1> 
+        <p class="text-hunter-green mt-5">Etiam ex ex, condimentum at libero ac, ultrices 
         vestibulum nisi. Curabitur dignissim iaculis ultrices. 
-        Sed tempus pretium felis, eget finibus leo. Donec ullamcorper urna ac enim aliquam semper. 
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+        Sed tempus pretium felis, eget finibus leo.
         </p>
       </div>   
     </div>
@@ -17,8 +16,16 @@
   <%= javascript_pack_tag 'countdown' %>
 
 </div>
-<div id="sloganSection" class="d-flex vh-100">
+<div class="d-flex bg-cultured">
 
-  <%= link_to 'Help us find a great slogan!', submissions_path, :class => "w-100 h-25 text-center p-5", :id => "announce" %>
+  <div class="jumbotron mx-auto m-5 bg-morning-blue w-75 text-center">
+    <h1 class="display-4">Help us find a slogan!</h1>
+    <p class="lead">We are asking our followers to help us find a slogan for the next Boulder Bike Tour</p>
+    <hr class="my-4">
+    <p>Show your creativity! Go on to the Slogan page and submit your idea. On the 1st of March we will choose the winner.</p>
+    <p class="lead">
+      <a class="btn btn-hunter-green btn-lg" href="/submissions" role="button">Submit Slogan</a>
+    </p>
+  </div>
 
 </div>

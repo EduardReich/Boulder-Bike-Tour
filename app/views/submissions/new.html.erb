@@ -1,5 +1,7 @@
-<h1>New Submission</h1>
+<div id="generalContainer" class="d-flex flex-column">  
+  <h1 class="mx-auto m-5">New Slogan</h1>
 
-<%= render 'form', submission: @submission %>
+  <%= render 'form', submission: @submission %>
 
-<%= link_to 'Back', submissions_path %>
+  <%= link_to 'Back', submissions_path, :class => "m-5" %>
+</div>

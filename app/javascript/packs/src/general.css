@@ -49,10 +49,3 @@ body {
 #announce {
   font-size: 1.8rem;
 }
-
-#sloganSection {
-  background-image: url('/assets/mapBkg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
