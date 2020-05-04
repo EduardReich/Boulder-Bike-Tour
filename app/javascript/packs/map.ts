@@ -3,7 +3,7 @@ import {Loader, LoaderOptions} from 'google-maps';
 
 
 const options: LoaderOptions = {/* todo */};
-const loader = new Loader('AIzaSyDyTSBeiR8Vb1UgRpGawDKcnn4EbJPji7U', options);
+const loader = new Loader('api', options);
 
 
 function initGmaps() {
