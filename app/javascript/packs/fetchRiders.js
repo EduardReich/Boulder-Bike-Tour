@@ -1,35 +1,28 @@
-locations = {
-  latitude: [],
-  longitude: []
+async function getData() {
+  const response = await fetch('/riders/locations');
+  return response.json();
 }
 
-names = {
-  first: [],
-  last: []
+export function sendData() {
+  const riders = {
+    latitude: [],
+    longitude: [],
+    first: [],
+    last: []
+  }
+
+  getData().then(
+    (data) => {      
+      const result = data;      
+      for(let i = 0; i < result.length; i++) {
+        riders.latitude.push(result[i].latitude);
+        riders.longitude.push(result[i].longitude);
+        riders.first.push(result[i].first_name);
+        riders.last.push(result[i].last_name);    
+      }
+    })  
+  return riders;  
 }
 
 
-function getData() {
 
-  fetch('/riders/locations')
-  .then(response => response.json())
-  .then((data) => {
-    const result = data;
-    ridersLatitude = [];
-    ridersLongitude = [];
-    ridersFirst = [];
-    ridersLast = [];
-    for(let i = 0; i < result.length; i++) {
-      ridersLatitude.push(result[i].latitude);
-      ridersLongitude.push(result[i].longitude);
-      ridersFirst.push(result[i].first_name);
-      ridersLast.push(result[i].last_name);
-    }
-    locations.latitude = ridersLatitude;
-    locations.longitude = ridersLongitude;
-    names.first = ridersFirst;
-    names.last = ridersLast;
-  });
-}
-
-getData();

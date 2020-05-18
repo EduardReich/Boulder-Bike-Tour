@@ -1,9 +1,8 @@
-import {Loader, LoaderOptions} from 'google-maps';
-// or const {Loader} = require('google-maps'); without typescript
+import {Loader} from 'google-maps';
+import {sendData} from './fetchRiders';
 
-
-const options: LoaderOptions = {/* todo */};
-const loader = new Loader('api', options);
+const loader = new Loader('api', {});
+const riders = sendData();
 
 
 function initGmaps() {
@@ -20,9 +19,9 @@ function initGmaps() {
 
 // Create markers.
 
-  for (var i = 0; i < locations.latitude.length; i++) {
+  for (var i = 0; i < riders.latitude.length; i++) {
     var marker = new google.maps.Marker({
-      position: {lat: locations.latitude[i], lng: locations.longitude[i]},
+      position: {lat: riders.latitude[i], lng: riders.longitude[i]},
       icon: iconBase,
       map: map
     });
@@ -30,12 +29,11 @@ function initGmaps() {
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
-    '<h2 id="firstHeading" class="firstHeading">'+names.first[i] + ' ' + names.last[i]'</h2>'+
+    '<h2 id="firstHeading" class="firstHeading">'+riders.first[i] + ' ' + riders.last[i] +'</h2>'
     '</div>';
 
     bindInfoWindow(marker, map, infowindow, contentString);
   };
- 
 }
 
 function bindInfoWindow(marker, map, infowindow, description) {
@@ -45,14 +43,12 @@ function bindInfoWindow(marker, map, infowindow, description) {
   });
 }
 
-if (locations.latitude !== undefined && window.google == undefined) {
+
+if (riders.latitude !== undefined && window.google == undefined) {
   loader.load().then(function (google) {
     initGmaps();
-  } 
+  }); 
 } else {
   location.reload(true);
 }
-
-
-
 

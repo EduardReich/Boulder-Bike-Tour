@@ -8,12 +8,12 @@ body {
   width: 80%;
   height: 80vh;
   margin-top: 70px;
+  margin-bottom: 70px;
   align-self: center;
 }
 
 #photosContainer {
   background-color: #f4f4f4;
-  width: 98%;
   text-align: center;
 }
 #photosContainer img {
@@ -30,16 +30,12 @@ body {
   background-position: center;
 } 
 
-#mapContainer {
-  background-image: url('/assets/mapBkg.png');
-}
-
 #generalContainer {
   background-image: url('/assets/mapBkg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  min-height: calc(100vh - 135px);  
 }
 
 .navbar {
@@ -48,4 +44,11 @@ body {
 
 #announce {
   font-size: 1.8rem;
+}
+
+@media (max-width: 575.98px) { 
+  #photosContainer img {
+    max-width: 270px;
+  }
+
 }

@@ -1,43 +1,44 @@
 <div id="generalContainer" class="d-flex flex-column">
-  <h1 class="mt-5 mx-auto">Riders</h1>
+  <div class="container text-center">
+    <h1 class="mt-5">Riders</h1>
 
-  <% if user_signed_in? %> 
-  <%= link_to 'New rider', new_rider_path, :class => "btn btn-dark mx-auto" %>
-  <% end %>
-  <table class="table mt-5 w-50 mx-auto">
-    <tr>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">City</th>
-      <% if user_signed_in? %> 
-      <th scope="col">Latitude</th>
-      <th scope="col">Longitude</th>
-      <th scope="col" colspan="3"></th>
-      <% end %>
-    </tr>
-  
-    <% @riders.each do |rider| %>
-      <tr>
-        <td><%= rider.first_name %></td>
-        <td><%= rider.last_name %></td>
-        <td><%= rider.city %></td>
-        <% if user_signed_in? %> 
-        <td><%= rider.latitude %></td>
-        <td><%= rider.longitude %></td>
-        <td><%= link_to 'Show', rider_path(rider) %></td>
-        <td><%= link_to 'Edit', edit_rider_path(rider) %></td>
-        <td><%= link_to 'Destroy', rider_path(rider),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-      <% end %>
+    <% if user_signed_in? %> 
+    <%= link_to 'New rider', new_rider_path, :class => "btn btn-dark mx-auto" %>
     <% end %>
-  </table>
+    <div class="table-responsive">
+      <table class="table mt-5 w-50 mx-auto table-sm">
+        <tr>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">City</th>
+          <% if user_signed_in? %> 
+          <th scope="col">Latitude</th>
+          <th scope="col">Longitude</th>
+          <th scope="col" colspan="3"></th>
+          <% end %>
+        </tr>
+      
+        <% @riders.each do |rider| %>
+          <tr>
+            <td><%= rider.first_name %></td>
+            <td><%= rider.last_name %></td>
+            <td><%= rider.city %></td>
+            <% if user_signed_in? %> 
+            <td><%= rider.latitude %></td>
+            <td><%= rider.longitude %></td>
+            <td><%= link_to 'Show', rider_path(rider) %></td>
+            <td><%= link_to 'Edit', edit_rider_path(rider) %></td>
+            <td><%= link_to 'Destroy', rider_path(rider),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          <% end %>
+        <% end %>
+      </table>
+    </div>
 
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete, :class => "btn btn-dark mx-auto") %>        
-    </li>
-  <% end %>
-
+    <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete, :class => "btn btn-dark mx-auto m-5") %>  
+    <% end %>
+  </div>
 </div>

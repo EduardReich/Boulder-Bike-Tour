@@ -17,7 +17,7 @@ class SubmissionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create submission" do
     assert_difference('Submission.count') do
-      post submissions_url, params: { submission: { email: @submission.email, first_name: @submission.first_name, last_name: @submission.last_name, slogan: @submission.slogan } }
+      post submissions_url, params: { submission: { first_name: @submission.first_name, last_name: @submission.last_name, slogan: @submission.slogan } }
     end
 
     assert_redirected_to submission_url(Submission.last)
