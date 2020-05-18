@@ -13,7 +13,6 @@
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "prop-types": "^15.7.2",
-    "ts-loader": "^6.2.2",
     "turbolinks": "^5.2.0"
   },
   "version": "4.0.0",
