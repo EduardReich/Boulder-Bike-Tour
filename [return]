@@ -3,5 +3,5 @@
 #   secret_access_key: 345
 
 # Used as the base secret for all MessageVerifiers in Rails, including the one protecting cookies.
-google_maps_api_key: AIzaSyDyTSBeiR8Vb1UgRpGawDKcnn4EbJPji7U
+google_maps_api_key: api
 secret_key_base: c81975b0bc52ce81563282eca3a0c07413f2170199872353451a96c6e029e53e8fd0a6487e66e29072457b666c0e0c9d29dc40570859bf933d923568f611cd73
